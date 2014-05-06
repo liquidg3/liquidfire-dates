@@ -1,0 +1,11 @@
+{
+    "name":         "liquidfire:Dates",
+    "version":      "0.0.1",
+    "description":  "A ton of great helpers for date related functionality (and form rendering).",
+    "altairDependencies": {
+    },
+    "events": {
+        "will-generate-thumb": "A thumbnail is about to be generated",
+        "did-generate-thumb": "A thumbnail was just generated"
+    }
+}
