@@ -1,0 +1,15 @@
+<div class="form-group <%= className %>">
+
+    <label for="<%= name %>" class="property-label"><%= options.label %></label>
+
+    <div class="input-group input-append date" data-provide="datepicker" data-date-autoclose="true" data-format="yyyy-mm-dd">
+
+        <input type="text" name="<%= name %>" value="<%= value %>" class="form-control">
+
+        <div class="input-group-addon add-on">
+            <a href="#"><i class="entypo-calendar"></i></a>
+        </div>
+
+    </div>
+
+</div>
