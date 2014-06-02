@@ -1,9 +1,10 @@
-define(['dojo/_base/declare', 'apollo/propertytypes/Date', 'altair/plugins/node!moment'],
+define(['dojo/_base/declare', 'apollo/propertytypes/_Base', 'altair/plugins/node!moment'],
 
-    function (declare, DateBase, moment) {
+    function (declare, _Base, moment) {
 
-        return declare([DateBase], {
+        return declare([_Base], {
 
+            key: 'date',
             media: {
                 css: ['liquidfire:Dates/public/css/datepicker3.css'],
                 js: ['liquidfire:Dates/public/js/bootstrap-datepicker.js']
@@ -15,6 +16,14 @@ define(['dojo/_base/declare', 'apollo/propertytypes/Date', 'altair/plugins/node!
 
             template: function (options) {
                 return 'liquidfire:Dates/views/date';
+            },
+
+            toJsValue: function (value, options, config) {
+                return (value) ? moment(value) : null;
+            },
+
+            toHttpResponseValue: function (value, options, config) {
+                return (value) ? moment(value) : null;
             },
 
 
