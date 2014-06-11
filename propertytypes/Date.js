@@ -28,9 +28,11 @@ define(['dojo/_base/declare', 'apollo/propertytypes/_Base', 'altair/plugins/node
 
 
             fromFormSubmissionValue: function (value, options, config) {
-
                 return new Date(value);
+            },
 
+            toDatabaseValue: function (value, options, config) {
+                return value;
             },
 
             render: function (template, context) {
