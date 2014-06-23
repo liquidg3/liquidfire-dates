@@ -23,12 +23,12 @@ define(['dojo/_base/declare', 'apollo/propertytypes/_Base', 'altair/plugins/node
             },
 
             toHttpResponseValue: function (value, options, config) {
-                return (value) ? moment(value) : null;
+                return (value) ? moment(value).toISOString() : null;
             },
 
 
             fromFormSubmissionValue: function (value, options, config) {
-                return new Date(value);
+                return (value) ? new Date(value) : null;
             },
 
             toDatabaseValue: function (value, options, config) {
