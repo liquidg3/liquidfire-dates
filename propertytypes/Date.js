@@ -6,8 +6,8 @@ define(['dojo/_base/declare', 'apollo/propertytypes/_Base', 'altair/plugins/node
 
             key: 'date',
             media: {
-                css: ['liquidfire:Dates/public/css/datepicker3.css'],
-                js: ['liquidfire:Dates/public/js/bootstrap-datepicker.js']
+                css: ['/public/_dates/css/datepicker3.css'],
+                js: ['/public/_dates/js/bootstrap-datepicker.js']
             },
 
             toViewValue: function (value, options, config) {
