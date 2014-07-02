@@ -10,6 +10,21 @@ define(['dojo/_base/declare', 'apollo/propertytypes/_Base', 'altair/plugins/node
                 js: ['/public/_dates/js/bootstrap-datepicker.js']
             },
 
+            options: {
+                format: {
+                    type: 'string',
+                    options: {
+                        label: 'The format used for import, export ,etc.'
+                    }
+                },
+                httpRequestFormat: {
+                    type: 'string',
+                    options: {
+                        label: 'The format used for dealing with http requests'
+                    }
+                }
+            },
+
             toViewValue: function (value, options, config) {
                 return (value) ? moment(value).format('MM/D/YYYY') : '';
             },
@@ -23,7 +38,20 @@ define(['dojo/_base/declare', 'apollo/propertytypes/_Base', 'altair/plugins/node
             },
 
             toHttpResponseValue: function (value, options, config) {
-                return (value) ? moment(value).toISOString() : null;
+
+                var v = (value) ? moment(value) : null;
+
+                if(v) {
+
+                    if(options.httpRequestFormat) {
+                        v = v.format(options.httpRequestFormat);
+                    } else {
+                        v = v.toISOString();
+                    }
+
+                }
+
+                return v;
             },
 
 
