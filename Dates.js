@@ -4,11 +4,9 @@ define(['altair/facades/declare',
 
     return declare([_HasPropertyTypesMixin], {
 
-
-
         startup: function (options) {
 
-            //hook into requests to see if forms were submitted
+            //when Alfred starts, lets share our upload dir
             this.on('titan:Alfred::did-execute-server').then(this.hitch('onDidExecuteAlfredWebServer'));
 
             return this.inherited(arguments);
