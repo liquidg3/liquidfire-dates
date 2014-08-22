@@ -60,7 +60,14 @@ define(['dojo/_base/declare', 'apollo/propertytypes/_Base', 'altair/plugins/node
             },
 
             toDatabaseValue: function (value, options, config) {
-                return value;
+
+                var v = this.toJsValue(value, options, config);
+
+                if(v) {
+                    v = v.toDate();
+                }
+
+                return v;
             },
 
             render: function (template, context) {
