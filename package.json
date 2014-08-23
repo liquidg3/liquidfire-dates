@@ -1,6 +1,6 @@
 {
     "name":               "liquidfire:Dates",
-    "version":            "0.0.8",
+    "version":            "0.0.9",
     "description":        "A ton of great helpers for date related functionality (and form rendering).",
     "altairDependencies": {
         "liquidfire:Apollo": ">=0.1.x"
