@@ -6,7 +6,7 @@ define(['altair/facades/declare',
 
         startup: function (options) {
 
-            //when Alfred starts, lets share our upload dir
+            //when Alfred starts, lets share our public dir
             this.on('titan:Alfred::did-execute-server').then(this.hitch('onDidExecuteAlfredWebServer'));
 
             return this.inherited(arguments);
