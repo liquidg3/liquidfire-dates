@@ -1,3 +1,4 @@
 [
-    "propertytypes/Date"
+    "propertytypes/Date",
+    "propertytypes/Time"
 ]

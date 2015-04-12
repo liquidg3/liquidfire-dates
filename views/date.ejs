@@ -7,9 +7,13 @@
         <input type="text" name="<%= name %>" value="<%= display %>" class="form-control">
 
         <div class="input-group-addon add-on">
-            <a href="#"><i class="entypo-calendar"></i></a>
+            <a href="#"><i class="glyphicon glyphicon-star"></i></a>
         </div>
 
     </div>
+
+    <% if (options.description) { %>
+        <p class="help-block"><%= options.description %></p>
+    <% } %>
 
 </div>

@@ -1,0 +1,14 @@
+<div class="form-group <%= className %>">
+
+    <label for="<%= name %>" class="property-label"><%= options.label %></label>
+
+    <div class="input-group input-append bootstrap-timepicker">
+        <input id="timepicker1" type="text" class="input-small">
+        <span class="add-on"><i class="icon-time"></i></span>
+    </div>
+
+    <% if (options.description) { %>
+        <p class="help-block"><%= options.description %></p>
+    <% } %>
+
+</div>
