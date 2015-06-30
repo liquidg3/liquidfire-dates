@@ -18,7 +18,7 @@ define(['dojo/_base/declare', 'apollo/propertytypes/_Base', 'altair/plugins/node
                     type: 'string',
                     options: {
                         label: 'The format used for import, export ,etc.',
-                        'default': 'MM/D/YYYY'
+                        'default': 'MM/DD/YYYY'
                     }
                 },
                 httpRequestFormat: {
