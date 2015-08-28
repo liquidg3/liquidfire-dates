@@ -1,6 +1,18 @@
-define(['dojo/_base/declare', 'apollo/propertytypes/_Base', 'altair/plugins/node!moment'],
+define(['dojo/_base/declare', 'apollo/propertytypes/_Base'],
 
-    function (declare, _Base, moment) {
+    function (declare, _Base) {
+
+        var m,
+            moment = function () {
+
+                if (!m) {
+                    require(['altair/plugins/node!moment'], function (moment) {
+                        m = moment;
+                    });
+                }
+
+                return m.apply(m, arguments);
+            };
 
         return declare([_Base], {
 
