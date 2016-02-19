@@ -3,10 +3,10 @@
     "version":            "0.1.2",
     "description":        "A ton of great helpers for date related functionality (and form rendering).",
     "altairDependencies": {
-        "liquidfire:Apollo": ">=0.1.x"
+        "liquidfire:Apollo": "~0.1.0"
     },
     "dependencies":       {
-        "moment": ">=2.6.x"
+        "moment": "~2.10.6"
     },
     "events":             {
         "will-generate-thumb": "A thumbnail is about to be generated",
