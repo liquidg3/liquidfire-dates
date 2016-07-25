@@ -1,6 +1,6 @@
-define(['dojo/_base/declare', 'apollo/propertytypes/_Base'],
+define(['dojo/_base/declare', 'apollo/propertytypes/_Base', 'lodash'],
 
-    function (declare, _Base) {
+    function (declare, _Base, _) {
 
         var m,
             moment = function () {
@@ -12,7 +12,7 @@ define(['dojo/_base/declare', 'apollo/propertytypes/_Base'],
                 }
 
                 return m.apply(m, arguments);
-        };
+            };
 
         return declare([_Base], {
 
@@ -50,6 +50,9 @@ define(['dojo/_base/declare', 'apollo/propertytypes/_Base'],
             },
 
             toJsValue: function (value, options, config) {
+                if (value && _.isString(value)) {
+                    return moment(value, options.format);
+                }
                 return (value) ? moment(value) : null;
             },
 
@@ -57,9 +60,9 @@ define(['dojo/_base/declare', 'apollo/propertytypes/_Base'],
 
                 var v = (value) ? moment(value) : null;
 
-                if(v) {
+                if (v) {
 
-                    if(options.httpRequestFormat) {
+                    if (options.httpRequestFormat) {
                         v = v.format(options.httpRequestFormat);
                     } else {
                         v = v.toISOString();
@@ -79,7 +82,7 @@ define(['dojo/_base/declare', 'apollo/propertytypes/_Base'],
 
                 var v = this.toJsValue(value, options, config);
 
-                if(v) {
+                if (v) {
                     v = v.toDate();
                 }
 
