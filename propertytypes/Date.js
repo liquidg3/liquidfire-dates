@@ -51,7 +51,7 @@ define(['dojo/_base/declare', 'apollo/propertytypes/_Base', 'lodash'],
 
             toJsValue: function (value, options, config) {
                 if (value && _.isString(value)) {
-                    return moment(value, options.format);
+                    return moment(value, [options.format, m.ISO_8601]);
                 }
                 return (value) ? moment(value) : null;
             },
